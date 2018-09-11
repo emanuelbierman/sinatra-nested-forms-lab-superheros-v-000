@@ -23,7 +23,6 @@ class App < Sinatra::Base
       @member3_bio = params["team"]["members"][2]["bio"]
 
       # More elegant:
-      
       # @hero_name = []
       # @hero_power = []
       # @hero_bio = []
