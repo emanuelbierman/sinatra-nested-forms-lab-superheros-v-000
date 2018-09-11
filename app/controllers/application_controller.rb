@@ -11,6 +11,7 @@ class App < Sinatra::Base
     post '/teams' do
       @team_name = params["team"]["name"]
       @team_motto = params["team"]["motto"]
+      
       @member1_name = params["team"]["members"][0]["name"]
       @member1_power = params["team"]["members"][0]["power"]
       @member1_bio = params["team"]["members"][0]["bio"]
@@ -20,6 +21,18 @@ class App < Sinatra::Base
       @member3_name = params["team"]["members"][2]["name"]
       @member3_power = params["team"]["members"][2]["power"]
       @member3_bio = params["team"]["members"][2]["bio"]
+
+      # More elegant:
+      # @hero_name = []
+      # @hero_power = []
+      # @hero_bio = []
+      # @team_members = params[:team][:members]
+      # @team_members.each do |hero|
+      #   @hero_name << hero[:name]
+      #   @hero_power << hero[:power]
+      #   @hero_bio << hero[:bio]
+      # end
+      
       erb :team
     end
 
